@@ -3,11 +3,34 @@
 *{
     margin: 0;
     font-family: "Inter", sans-serif;
+    color: white;
 }
 
 .color-pick-wrap{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    background-color: #1F2937;
     width: 100%;
+    padding: 1.5rem;
 }
+
+.color-pick-wrap input{
+    margin-right: 1rem;
+}
+
+.color-pick-wrap select{
+    margin-right: 1rem;
+    background-color: #1F293A;
+    border: #D1D5DB solid 2px;
+}
+
+.color-pick-wrap button{
+    background-color: #3D4B60;
+    padding: 1rem 2rem 1rem 2rem;
+    border-radius: .5rem;
+    border: none;
+    font-size: 1rem;
+}
+
