@@ -43,7 +43,6 @@
 .select-wrap select{
     background-color: #1F293A;
     border: #D1D5DB solid 2px;
-    appearance: base-select;
     width: 25rem;
     padding: 0 1rem 0 1rem;
     font-size: 1.25rem;
@@ -61,10 +60,5 @@
 
 .icon-container i{
     font-size: 1.25rem;
-}
-
-#test, ::picker(select){
-    appearance: base-select;
-   color: black;
 }
 
