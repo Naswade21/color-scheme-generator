@@ -12,7 +12,13 @@
         <section>
             <div class="color-pick-wrap">
                 <input type="color" name="color" id="color">
-                
+                <select id="color-select">
+                    <button>
+                        <selectedcontent></selectedcontent>
+                    </button>
+                    <option value="">Please select a color type</option>
+                    <option value="first">MonoChrome</option>
+                </select>
                 <button id="get-color">Get color scheme</button>
             </div>
             <div id="color-pallette">
@@ -20,6 +26,7 @@
             </div>
         </section>
     </main>
+    <!--Render the color options from API here-->
     <script src="main.js" type="module"></script>
 </body>
 </html>
