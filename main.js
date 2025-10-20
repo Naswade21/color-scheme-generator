@@ -4,9 +4,9 @@
  const selectedColor = document.getElementById('select-color')
  const colorForm = document.getElementById('color-form')
 
-fetch('https://www.csscolorsapi.com/api/colors/dodgerblue')
- .then(response => response.json())
- .then(data => console.log(data))
+ fetch('https://csscolorsapi.com/api/colors/dodgerblue')
+    .then(response => response.json())
+    .then(data => console.log(data))
  
 colorForm.addEventListener('submit', (e) => {
     e.preventDefault()
