@@ -1,17 +1,19 @@
  const color = document.getElementById('color')
- const colorBtn = document.getElementById('color-btn')
  const colorBars = document.getElementById('color-pallette')
  const selectedColor = document.getElementById('select-color')
  const colorForm = document.getElementById('color-form')
  let colorArray = []
 
- const colorValue = color.value
+ colorForm.addEventListener('submit', (e) => {
+    e.preventDefault()
 
- const adjColorValue = colorValue.replace("#", "")
+    let colorValue = color.value
 
-fetch(`https://www.thecolorapi.com/scheme?hex=${adjColorValue}&format=json&mode=${selectedColor.value}`)
-    .then(response => response.json())
-    .then(data => {
+    let adjColorValue = colorValue.replace("#", "")
+
+    fetch(`https://www.thecolorapi.com/scheme?hex=${adjColorValue}&format=json&mode=${selectedColor.value}`)
+      .then(response => response.json())
+      .then(data => {
         colorArray = data.colors
 
         let hexArr = colorArray.map((color) => {
@@ -20,8 +22,9 @@ fetch(`https://www.thecolorapi.com/scheme?hex=${adjColorValue}&format=json&mode=
 
         renderColors(hexArr)
     })
+})
 
-const getColorBarHtml = (a = []) => {
+const getColorBarsHtml = (a = []) => {
     return a.map((color) => {
         return `<div class="color-bar-wrap">
         <div class="color-bar" style="background-color: ${color.value}"></div>
@@ -31,9 +34,5 @@ const getColorBarHtml = (a = []) => {
 }
 
 const renderColors = (a) => {
-    return colorBars.innerHTML = getColorBarHtml(a)
+    return colorBars.innerHTML = getColorBarsHtml(a)
 }
-
-colorForm.addEventListener('submit', (e) => {
-    e.preventDefault()
-})
