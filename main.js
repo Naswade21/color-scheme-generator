@@ -3,11 +3,37 @@
  const colorBars = document.getElementById('color-pallette')
  const selectedColor = document.getElementById('select-color')
  const colorForm = document.getElementById('color-form')
+ let colorArray = []
 
- fetch('https://csscolorsapi.com/api/colors/dodgerblue')
+ const colorValue = color.value
+
+ const adjColorValue = colorValue.replace("#", "")
+
+fetch(`https://www.thecolorapi.com/scheme?hex=${adjColorValue}&format=json&mode=${selectedColor.value}`)
     .then(response => response.json())
-    .then(data => console.log(data))
- 
+    .then(data => {
+        colorArray = data.colors
+
+        let hexArr = colorArray.map((color) => {
+            return color.hex
+        })
+
+        renderColors(hexArr)
+    })
+
+const getColorBarHtml = (a = []) => {
+    return a.map((color) => {
+        return `<div class="color-bar-wrap">
+        <div class="color-bar" style="background-color: ${color.value}"></div>
+        <div class="color-name">${color.value}</div>
+        </div>`
+    }).join('')
+}
+
+const renderColors = (a) => {
+    return colorBars.innerHTML = getColorBarHtml(a)
+}
+
 colorForm.addEventListener('submit', (e) => {
     e.preventDefault()
 })

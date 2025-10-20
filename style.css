@@ -96,6 +96,24 @@ option:checked{
     }
 }
 
+#color-pallette{
+    display: flex;
+    width: 100%;
+}
+
+.color-name{
+    background-color: #1F2937;
+    text-align: center;
+}
+
+.color-bar{
+    height: 80vh;
+}
+
+.color-bar-wrap{
+    width: 100%;
+}
+
 .hidden{
     display: none;
 }
