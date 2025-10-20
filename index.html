@@ -9,24 +9,32 @@
 </head>
 <body>
     <main>
-        <section>
+    <section>
+        <form id="color-form">
             <div class="color-pick-wrap">
-                <input type="color" name="color" id="color">
-                <select id="color-select">
+                <input type="color" value="#0047AB" name="color" id="color" required>
+                <select id="select-color" required>
                     <button>
                         <selectedcontent></selectedcontent>
                     </button>
-                    <option value="">Please select a color type</option>
-                   <option value="first">Monochrome <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="">Please select a color scheme</option>
+                    <option value="monochrome">Monochrome <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="monochrome-dark">Monochrome-dark <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="monochrome-light">Monochrome-light <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="analogic">Analogic <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="complement">Complement <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="analogic-complement">Analogic-complement <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="triad">Triad <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
+                    <option value="quad">Quad <div class="icon-wrap hidden"><i class="fa-solid fa-check"></i></div></option>
                 </select>
-                <button id="get-color">Get color scheme</button>
+                <button id="color-btn">Get color scheme</button>
             </div>
+        </form>
             <div id="color-pallette">
                 <!--Render the color towers here with the respective hex code below-->
             </div>
-        </section>
+    </section>
     </main>
-    <!--Render the color options from API here-->
     <script src="main.js" type="module"></script>
 </body>
 </html>

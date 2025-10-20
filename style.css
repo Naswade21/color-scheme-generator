@@ -35,6 +35,12 @@
     border: none;
     font-size: 1rem;
     cursor: pointer;
+    transition: all 5ms ease;
+}
+
+.color-pick-wrap button:hover{
+    background-color: white;
+    color: #1F2937;
 }
 
 select{
@@ -61,7 +67,7 @@ select::picker-icon{
     width: 20px;
 }
 
-#color-select option{
+#select-color option{
     color: white;
     cursor: pointer;
     background-color: #1F2937;
