@@ -39,7 +39,7 @@
 
 select{
     border: 1px solid white;
-    padding: 1rem 2rem;
+    padding: 1rem;
     width: 20rem;
     cursor: pointer;
     margin-right: 1rem;
@@ -51,13 +51,45 @@ select,
   color: black;
 }
 
+::picker(select){
+    border-radius: 0 0 1rem 1rem;
+}
+
 select::picker-icon{
     color: white;
+    content: url('icons-images/chevron-down-solid-full (2).svg');
+    width: 20px;
 }
 
 #color-select option{
     color: white;
     cursor: pointer;
     background-color: #1F2937;
-    padding: 1rem 2rem;
+    padding: 1rem;
+    margin-left: auto;
+}
+
+option::checkmark{
+   content: "";
+}
+
+.icon-wrap{
+   text-align: end; /* Icons work like text not elements!!! */
+    width: 100%;
+}
+
+.icon-wrap i{
+    color: #5A8DFF;
+}
+
+option:checked{
+    font-weight: bold;
+
+    .icon-wrap{
+        display: block;
+    }
+}
+
+.hidden{
+    display: none;
 }
