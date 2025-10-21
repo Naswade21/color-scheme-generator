@@ -9,6 +9,13 @@
                         {value: '#AAD1B6'},
                         {value: '#A626D3'}]
 
+
+document.addEventListener('click', (e) => {
+    if(e.target.dataset.copy){
+        clickToCopy(e.target.dataset.copy)
+    }
+})
+
  colorForm.addEventListener('submit', (e) => {
     e.preventDefault()
 
@@ -31,11 +38,16 @@
     })
 })
 
+const clickToCopy = (targetId) => {
+    navigator.clipboard.writeText(targetId)
+    alert(`${targetId} was copied successfully!`)
+}
+
 const getColorBarsHtml = (a = []) => {
     return a.map((color) => {
         return `<div class="color-bar-wrap">
         <div class="color-bar" style="background-color: ${color.value}"></div>
-        <div class="color-name">${color.value}</div>
+        <div class="color-name" data-copy="${color.value}">${color.value}</div>
         </div>`
     }).join('')
 }
