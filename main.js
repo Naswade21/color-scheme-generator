@@ -3,6 +3,7 @@
  const selectedColor = document.getElementById('select-color')
  const colorForm = document.getElementById('color-form')
  let colorArray = []
+ let beginColorArray = [{value: ''}]
 
  colorForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -19,6 +20,8 @@
         let hexArr = colorArray.map((color) => {
             return color.hex
         })
+
+        console.log(hexArr)
 
         renderColors(hexArr)
     })
