@@ -10,6 +10,7 @@
 .color-pick-wrap{
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     background-color: #1F2937;
@@ -104,16 +105,40 @@ option:checked{
 .color-name{
     background-color: #1F2937;
     text-align: center;
+    padding: 1rem;
+    cursor: pointer;
 }
 
 .color-bar{
-    height: 83vh;
+    height: 100%;
 }
 
 .color-bar-wrap{
     width: 100%;
+    height: 78.5vh;
 }
 
 .hidden{
     display: none;
+}
+
+@media only screen and (max-width: 660px) {
+  #color-btn {
+    margin-top: 1rem;
+  }
+
+  .color-pick-wrap{
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .color-pick-wrap input{
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 8rem;
+  }
+
+  select{
+    margin-right: 0;
+  }
 }

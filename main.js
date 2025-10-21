@@ -3,7 +3,11 @@
  const selectedColor = document.getElementById('select-color')
  const colorForm = document.getElementById('color-form')
  let colorArray = []
- let beginColorArray = [{value: ''}]
+ const beginColorArray = [{value: '#F55A5A'}, 
+                        {value: '#2B283A'},
+                        {value: '#FBF3AB'},
+                        {value: '#AAD1B6'},
+                        {value: '#A626D3'}]
 
  colorForm.addEventListener('submit', (e) => {
     e.preventDefault()
@@ -39,3 +43,5 @@ const getColorBarsHtml = (a = []) => {
 const renderColors = (a) => {
     return colorBars.innerHTML = getColorBarsHtml(a)
 }
+
+renderColors(beginColorArray)
